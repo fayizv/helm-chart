@@ -34,7 +34,7 @@ pipeline{
                 sh 'echo version : 0.${BUILD_NUMBER}.0 >> chart/Chart.yaml'
                 sh 'helm package chart'
                 sh 'aws ecr get-login-password  --region us-east-1 | helm registry login --username AWS  --password-stdin 707032823801.dkr.ecr.us-east-1.amazonaws.com'
-                sh 'helm push helm-sample-0.${BUILD_NUMBER}.0.tgz oci://707032823801.dkr.ecr.us-east-1.amazonaws.com/'
+                sh 'helm push chart-0.${BUILD_NUMBER}.0.tgz oci://707032823801.dkr.ecr.us-east-1.amazonaws.com/'
                 sh 'rm -rf helm-sample-*'
                 }
         }
