@@ -23,7 +23,7 @@ pipeline{
                 script {
                    
                         sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 707032823801.dkr.ecr.us-east-1.amazonaws.com'
-                        sh 'docker tag helm-sample:latest 707032823801.dkr.ecr.us-east-1.amazonaws.com/python-flask:${BUILD_NUMBER}' 
+                        sh 'docker tag fayizv/helm-sample:latest 707032823801.dkr.ecr.us-east-1.amazonaws.com/python-flask:${BUILD_NUMBER}' 
                         sh 'docker push 707032823801.dkr.ecr.us-east-1.amazonaws.com/python-flask:${BUILD_NUMBER}'
                 }
             }
