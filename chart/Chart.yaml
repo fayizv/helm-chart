@@ -3,5 +3,5 @@ name: python-flask
 description: A Helm chart for Kubernetes       
 type: application
 appVersion: "1.16.0"
-version: 1.1.1
+
 
